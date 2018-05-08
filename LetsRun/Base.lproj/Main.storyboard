@@ -300,13 +300,23 @@
                                                         </label>
                                                     </subviews>
                                                 </stackView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Tt-xt-gB5">
+                                                    <rect key="frame" x="0.0" y="89" width="375" height="1"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="1" id="Hel-F9-JPX"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
+                                                <constraint firstItem="1Tt-xt-gB5" firstAttribute="leading" secondItem="eM6-26-7kU" secondAttribute="leading" id="I5m-kJ-wF1"/>
+                                                <constraint firstAttribute="bottom" secondItem="1Tt-xt-gB5" secondAttribute="bottom" id="eCd-C7-lx3"/>
                                                 <constraint firstItem="Xff-AH-way" firstAttribute="top" secondItem="eM6-26-7kU" secondAttribute="topMargin" constant="8" id="kCs-tj-6c1"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="Xff-AH-way" secondAttribute="bottom" constant="8" id="pEj-Tn-9vk"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Xff-AH-way" secondAttribute="trailing" constant="8" id="t0H-50-uZO"/>
                                                 <constraint firstItem="Xff-AH-way" firstAttribute="leading" secondItem="eM6-26-7kU" secondAttribute="leadingMargin" constant="8" id="tBT-0q-INV"/>
+                                                <constraint firstAttribute="trailing" secondItem="1Tt-xt-gB5" secondAttribute="trailing" id="y3o-D1-Ad0"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -336,6 +346,9 @@
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="My Logs" image="tabbar-myLogIconGray" id="cPa-gy-q4n"/>
+                    <connections>
+                        <outlet property="tableView" destination="Sf2-4P-MVe" id="YCV-dI-iDD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>

@@ -26,7 +26,7 @@ class RunLogCell: UITableViewCell {
         
         totalDIstanceLabel.text = "\(run.distance.metersToMiles(places: 2)) mi"
         runDurationLabel.text = run.duration.formatTimeDurationToString()
-        dateLabel.text = "\(run.date)"
+        dateLabel.text = run.date.getDateString()
         averagePaceLabel.text = run.pace.formatTimeDurationToString()
         
         
