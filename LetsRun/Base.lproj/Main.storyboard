@@ -248,7 +248,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="90" id="jjV-Sg-Oq8">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RunLogCell" rowHeight="90" id="jjV-Sg-Oq8" customClass="RunLogCell" customModule="LetsRun" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jjV-Sg-Oq8" id="eM6-26-7kU">
@@ -310,6 +310,12 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="averagePaceLabel" destination="P0g-NO-LRp" id="auX-jZ-65g"/>
+                                            <outlet property="dateLabel" destination="tS4-CL-xMd" id="PK3-Ox-YUq"/>
+                                            <outlet property="runDurationLabel" destination="hjO-1O-FxM" id="cen-3w-NZQ"/>
+                                            <outlet property="totalDIstanceLabel" destination="71c-RR-FuC" id="9kR-PK-7uD"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
