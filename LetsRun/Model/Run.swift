@@ -17,6 +17,8 @@ class Run: Object {
     @objc dynamic public private (set) var duration = 0
     @objc dynamic public private (set) var date = NSDate()
     
+    public private (set) var locations = List<Location>()
+    
     //primary key
     override class func primaryKey() -> String {
         return "id"
@@ -27,21 +29,22 @@ class Run: Object {
         return ["pace", "date", "duration"]
     }
     
-    convenience init(pace: Int, distance: Double, duration: Int) {
+    convenience init(pace: Int, distance: Double, duration: Int, locations: List<Location>) {
         self.init()
         self.id = UUID().uuidString.lowercased()
         self.date = NSDate()
         self.pace = pace
         self.distance = distance
         self.duration = duration
+        self.locations = locations
         
     }
     
-    static func addRunToRealmDB(pace: Int, distance: Double, duration: Int) {
+    static func addRunToRealmDB(pace: Int, distance: Double, duration: Int, locations: List<Location>) {
         
         REALM_QUE.sync {
             
-            let run = Run(pace: pace, distance: distance, duration: duration)
+            let run = Run(pace: pace, distance: distance, duration: duration, locations: locations)
             
             do {
                 let realm = try Realm()

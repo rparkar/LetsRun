@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import RealmSwift
 
 class OnRunViewController: LocationViewController {
 
@@ -28,6 +29,7 @@ class OnRunViewController: LocationViewController {
     var timer = Timer()
     var countTimer = 0
     var pace = 0
+    var coordinateLocations = List<Location>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -91,7 +93,7 @@ class OnRunViewController: LocationViewController {
     func stopRun(){
         manager?.stopUpdatingLocation()
         //add objects to realm DB
-        Run.addRunToRealmDB(pace: pace, distance: runDistance, duration: countTimer)
+        Run.addRunToRealmDB(pace: pace, distance: runDistance, duration: countTimer, locations: coordinateLocations)
     }
 
 
@@ -141,6 +143,8 @@ extension OnRunViewController: CLLocationManagerDelegate {
             
         } else if let location = locations.last {
             runDistance += lastLocation.distance(from: location)
+            let newLocation = Location(latitude: Double(lastLocation.coordinate.latitude), longitude: Double(lastLocation.coordinate.longitude))
+            coordinateLocations.insert(newLocation, at: 0)
             distanceLabel.text = "\(runDistance.metersToMiles(places: 2))"
             
             if countTimer > 0 && runDistance > 0 {
