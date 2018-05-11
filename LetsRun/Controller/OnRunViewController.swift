@@ -13,8 +13,6 @@ import RealmSwift
 class OnRunViewController: LocationViewController {
 
     //outlets
-    
-    
     @IBOutlet weak var pauseButton: UIButton!
     @IBOutlet weak var sliderOutlineImageView: UIImageView!
     @IBOutlet weak var sliderEndButtonImageView: UIImageView!
@@ -39,9 +37,6 @@ class OnRunViewController: LocationViewController {
         sliderEndButtonImageView.isUserInteractionEnabled = true
         
         swipeGesture.delegate = self as? UIGestureRecognizerDelegate
-        
-        
-        // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {

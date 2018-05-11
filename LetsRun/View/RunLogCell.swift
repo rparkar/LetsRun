@@ -11,7 +11,6 @@ import UIKit
 class RunLogCell: UITableViewCell {
     
     //outlets
-    
     @IBOutlet weak var runDurationLabel: UILabel!
     @IBOutlet weak var totalDIstanceLabel: UILabel!
     @IBOutlet weak var averagePaceLabel: UILabel!
@@ -19,7 +18,6 @@ class RunLogCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
     
     func configure(run: Run) {

@@ -12,7 +12,6 @@ import MapKit
 class LocationViewController: UIViewController, MKMapViewDelegate {
     
     var manager: CLLocationManager?
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,9 +19,6 @@ class LocationViewController: UIViewController, MKMapViewDelegate {
         manager = CLLocationManager()
         manager?.desiredAccuracy = kCLLocationAccuracyBest
         manager?.activityType = .fitness
-        
-        
-        // Do any additional setup after loading the view.
     }
 
     func checkLocationAuthStatus() {
@@ -30,6 +26,4 @@ class LocationViewController: UIViewController, MKMapViewDelegate {
             manager?.requestWhenInUseAuthorization()
         }
     }
-
-
 }

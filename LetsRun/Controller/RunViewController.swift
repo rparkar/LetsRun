@@ -25,10 +25,6 @@ class RunViewController: LocationViewController {
         super.viewDidLoad()
         
         checkLocationAuthStatus()
-        
-
-        
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
     func addLastRunToMap() -> MKPolyline? {
@@ -62,24 +58,10 @@ class RunViewController: LocationViewController {
         }
     }
     
-//    func getLastRun() {
-//        guard let lastRun = Run.getAllRuns()?.first else {
-//            closeLastRunView()
-//            return}
-//
-//        showLastRunView()
-//        avgPaceLabel.text = lastRun.pace.formatTimeDurationToString()
-//        distanceLabel.text = "\(lastRun.distance.metersToMiles(places: 2)) mi"
-//        durationLabel.text = lastRun.duration.formatTimeDurationToString()
-//
-//    }
-    
     func closeLastRunView() {
-        
         lastRunView.isHidden = true
         lastRunStack.isHidden = true
         closeViewButton.isHidden = true
-        
     }
     
     func showLastRunView() {
@@ -94,10 +76,9 @@ class RunViewController: LocationViewController {
     
     override func viewWillAppear(_ animated: Bool) {
        
-        manager?.delegate = self //as? CLLocationManagerDelegate
+        manager?.delegate = self
         mapView.delegate = self
         manager?.startUpdatingLocation()
-       // getLastRun()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -132,7 +113,6 @@ class RunViewController: LocationViewController {
             maxLong = max(maxLong, location.longitude)
             
         }
-        
         return MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: (minLat + maxLat)/2, longitude: (minLong + maxLong)/2), span: MKCoordinateSpan(latitudeDelta: (maxLat - minLat) * 1.5, longitudeDelta: (maxLong - minLong) * 1.5))
     }
     
@@ -140,8 +120,6 @@ class RunViewController: LocationViewController {
         closeLastRunView()
         centerMapToUserLocation()
     }
-    
-
 }
 
 
@@ -162,7 +140,6 @@ extension RunViewController: CLLocationManagerDelegate {
         let renderer = MKPolylineRenderer (polyline: polyLine)
         renderer.strokeColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
         renderer.lineWidth = 5
-        
         return renderer
         
     }
